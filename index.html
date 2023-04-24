@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Messages | Firebase</title>
+    <link rel="stylesheet" href="./styles.css">
+  
+</head>
+
+<body>
+    <div class="container">
+        <form  name="myForm"  action="" id="contactForm"  onsubmit="return validateForm()">
+            <h1>This form is commected to live firebase for Demo.</h1>
+            <div class="alert">Your message sent</div>
+
+            <div class="inputBox">
+                <input type="text" name="fname" id="name" placeholder="Your name...." />
+            </div>
+
+            <div class="inputBox">
+                <input type="email" name="email" id="emailid" placeholder="Your Email....." />
+            </div>
+
+            <div class="inputBox">
+                <textarea id="msgContent" name="msg"  cols="30" rows="10" placeholder="Message"></textarea>
+            </div>
+
+            <div class="inputBox">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+      <script>function validateForm() {
+  let x = document.forms["myForm"]["fname"]["email"]["msg"].value;
+  if (x == "") {
+    alert("Name email and msg must be filled out");
+    return false;
+  }
+}</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="./mail.js"></script>
+</body>
+
+</html>
